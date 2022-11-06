@@ -4,18 +4,21 @@ import com.project.graduates.backend.domain.model.enumaration.Sex;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
 @Setter
 public class CreateGraduateResource {
 
-    private Date year;
+    private String year;
 
 
     private String type_of_course;
 
 
     private Long no_of_graduates;
+
+    private Sex sex;
 
 }

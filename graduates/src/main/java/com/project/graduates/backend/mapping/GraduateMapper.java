@@ -5,12 +5,14 @@ import com.project.graduates.backend.resource.graduate.CreateGraduateResource;
 import com.project.graduates.backend.resource.graduate.GraduateResource;
 import com.project.graduates.backend.resource.graduate.UpdateGraduateResource;
 import com.project.graduates.shared.mapping.EnhancedModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import java.util.List;
 public class GraduateMapper {
 
+    @Autowired
     EnhancedModelMapper mapper;
 
     public GraduateResource toResource(Graduate model) {

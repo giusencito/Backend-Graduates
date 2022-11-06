@@ -24,7 +24,7 @@ public class GraduateController {
     @Autowired
     private GraduateService graduateService;
 
-
+    @Autowired
     private GraduateMapper mapper;
 
     @GetMapping

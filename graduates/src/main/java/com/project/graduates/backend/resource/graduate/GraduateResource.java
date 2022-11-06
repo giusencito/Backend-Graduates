@@ -17,8 +17,8 @@ public class GraduateResource {
 
     private Long id;
 
-    @JsonFormat(pattern="yyyy")
-    private Date year;
+
+    private String year;
 
 
     private Sex sex;

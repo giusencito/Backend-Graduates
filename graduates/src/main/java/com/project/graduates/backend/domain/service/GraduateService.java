@@ -12,5 +12,6 @@ public interface GraduateService {
     Page<Graduate> getAll(Pageable pageable);
     Graduate getById(Long graduateId);
     Graduate update(Long graduateId, Graduate request);
+    Graduate create(Graduate graduate);
     ResponseEntity<?> delete(Long graduateId);
 }

@@ -42,6 +42,11 @@ public class GraduateServiceImpl implements GraduateService {
     }
 
     @Override
+    public Graduate create(Graduate graduate) {
+        return graduateRepository.save(graduate);
+    }
+
+    @Override
     public ResponseEntity<?> delete(Long graduateId) {
         return graduateRepository.findById(graduateId).map(graduate -> {
             graduateRepository.delete(graduate);

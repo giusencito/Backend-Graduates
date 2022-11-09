@@ -14,10 +14,10 @@ public class CreateGraduateResource {
     private String year;
 
 
-    private String type_of_course;
+    private String typeOfCourse;
 
 
-    private Long no_of_graduates;
+    private Long noOfGraduates;
 
     private Sex sex;
 

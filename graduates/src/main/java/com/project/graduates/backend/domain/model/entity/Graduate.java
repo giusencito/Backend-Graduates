@@ -31,8 +31,8 @@ public class Graduate {
     private Sex sex;
 
     @NotNull
-    private String type_of_course;
+    private String typeOfCourse;
 
     @NotNull
-    private Long no_of_graduates;
+    private Long noOfGraduates;
 }

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/api/v1/graduates")
+@RequestMapping("/api/v1/graduatesCrud")
 public class GraduateController {
 
     @Autowired
@@ -34,6 +34,28 @@ public class GraduateController {
     @GetMapping("{graduateId}")
     public GraduateResource getById(@PathVariable("graduateId") Long graduateId) {
         return mapper.toResource(graduateService.getById(graduateId));
+    }
+    @GetMapping("sex/{sexName}")
+    public Page<GraduateResource> getBySex(@PathVariable("sexName") String sexName,Pageable pageable) {
+        return mapper.modelListToPage(graduateService.getBySex(sexName), pageable);
+    }
+
+
+    @GetMapping("getSexAndYear/{sex}/{year}")
+    public Page<GraduateResource> getBySexAndYear(@PathVariable("sex") String sex,@PathVariable("year") String year,Pageable pageable) {
+        return mapper.modelListToPage(graduateService.getBySexAndYear(sex, year), pageable);
+    }
+    @GetMapping("getSexAndCourse/{sex}/{course}")
+    public Page<GraduateResource> getBySexAndAndType_of_course(@PathVariable("sex") String sex,@PathVariable("course") String course,Pageable pageable) {
+        return mapper.modelListToPage(graduateService.getBySexAndAndType_of_course(sex, course), pageable);
+    }
+    @GetMapping("getSexAndNumber/{sex}/{number}")
+    public Page<GraduateResource> getBySexAndAndNo_of_graduates(@PathVariable("sex") String sex,@PathVariable("number") Long number,Pageable pageable) {
+        return mapper.modelListToPage(graduateService.getBySexAndAndNo_of_graduates(sex, number), pageable);
+    }
+    @GetMapping("getSeYearAndCourse/{year}/{course}")
+    public Page<GraduateResource> getByYearAndType_of_course(@PathVariable("year") String year,@PathVariable("course") String course,Pageable pageable) {
+        return mapper.modelListToPage(graduateService.getByYearAndType_of_course(year, course), pageable);
     }
     @PostMapping
     public GraduateResource create(@RequestBody CreateGraduateResource request) {

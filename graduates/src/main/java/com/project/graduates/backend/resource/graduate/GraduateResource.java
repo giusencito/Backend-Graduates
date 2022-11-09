@@ -24,9 +24,9 @@ public class GraduateResource {
     private Sex sex;
 
 
-    private String type_of_course;
+    private String typeOfCourse;
 
 
-    private Long no_of_graduates;
+    private Long noOfGraduates;
 
 }

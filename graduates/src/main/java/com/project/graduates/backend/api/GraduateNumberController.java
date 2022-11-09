@@ -19,7 +19,7 @@ public class GraduateNumberController {
     @Autowired
     private GraduateMapper mapper;
 
-    @GetMapping("noGraduates/{number}")
+    @GetMapping("{number}")
     public Page<GraduateResource> getByNo_of_graduates(@PathVariable("number") Long number, Pageable pageable) {
         return mapper.modelListToPage(graduateService.getByNo_of_graduates(number), pageable);
     }

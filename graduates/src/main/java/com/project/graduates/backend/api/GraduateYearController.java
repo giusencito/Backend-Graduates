@@ -19,15 +19,15 @@ public class GraduateYearController {
     @Autowired
     private GraduateMapper mapper;
 
-    @GetMapping("year/{year}")
+    @GetMapping("{year}")
     public Page<GraduateResource> getByYear(@PathVariable("year") String year, Pageable pageable) {
         return mapper.modelListToPage(graduateService.getByYear(year), pageable);
     }
-    @GetMapping("betweenyear/{year1}/{year2}")
+    @GetMapping("betweenYear/{year1}/{year2}")
     public Page<GraduateResource> getByBetweenYear(@PathVariable("year1") String year1,@PathVariable("year2") String year2,Pageable pageable) {
         return mapper.modelListToPage(graduateService.getByYearBetween(year1,year2), pageable);
     }
-    @GetMapping("beforeyear/{year}")
+    @GetMapping("beforeYear/{year}")
     public Page<GraduateResource> getByBeforeYear(@PathVariable("year") String year,Pageable pageable) {
         return mapper.modelListToPage(graduateService.getByYearBefore(year), pageable);
     }

@@ -1,6 +1,7 @@
 package com.project.graduates.backend.resource.graduate;
 
 
+import com.project.graduates.backend.domain.model.enumaration.Sex;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,14 @@ import lombok.Setter;
 @Setter
 public class UpdateGraduateResource {
 
-    private Long no_of_graduates;
+    private String year;
+
+
+    private String typeOfCourse;
+
+
+    private Long noOfGraduates;
+
+    private Sex sex;
 
 }

@@ -40,7 +40,17 @@ public class GraduateServiceImpl implements GraduateService {
 
     @Override
     public Graduate update(Long graduateId, Graduate request) {
-        return null;
+        return graduateRepository.findById(graduateId).map(graduate -> {
+
+
+            graduate.setSex(request.getSex());
+            graduate.setYear(request.getYear());
+            graduate.setTypeOfCourse(request.getTypeOfCourse());
+            graduate.setNoOfGraduates(request.getNoOfGraduates());
+
+            graduateRepository.save(graduate);
+            return graduate;
+        }).orElseThrow(() -> new ResourceNotFoundException(ENTITY, graduateId));
     }
 
     @Override
